@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion Sécurisée | Gana Ousmane</title>
+    <style>
+        :root {
+            --primary: #00f2fe;
+            --secondary: #4facfe;
+            --error: #ff4b2b;
+            --success: #00ff87;
+        }
+
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Segoe UI', sans-serif;
+            /* Fond Multi-color Animé */
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+            overflow: hidden;
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .login-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 40px;
+            border-radius: 25px;
+            width: 350px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            text-align: center;
+            color: white;
+            transition: transform 0.3s ease, opacity 0.5s ease;
+        }
+
+        h2 { margin-bottom: 30px; letter-spacing: 2px; font-weight: 300; }
+
+        .input-box {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px 15px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid transparent;
+            border-radius: 10px;
+            color: white;
+            outline: none;
+            box-sizing: border-box;
+            transition: 0.3s;
+        }
+
+        /* Validation visuelle : quand l'utilisateur écrit */
+        input:focus {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: var(--primary);
+        }
+
+        input:valid {
+            border-color: var(--success);
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 10px;
+            background: white;
+            color: #333;
+            font-weight: bold;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+            background: var(--primary);
+            color: white;
+        }
+
+        button:active {
+            transform: scale(0.98);
+        }
+
+        #errorMessage {
+            color: #ffda00;
+            font-size: 0.8rem;
+            margin-top: 15px;
+            display: none;
+            animation: shake 0.4s;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-10px); }
+            75% { transform: translateX(10px); }
+        }
+
+        .success-mode {
+            opacity: 0;
+            transform: scale(0.8);
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-card" id="card">
+        <h2>Gana Ousmane</h2>
+        <form id="loginForm">
+            <div class="input-box">
+                <input type="text" id="userInput" placeholder="Identifiant" required>
+            </div>
+            <div class="input-group">
+                <input type="password" id="passInput" placeholder="Mot de passe" required>
+            </div>
+            <button type="submit">Valider l'accès</button>
+            <div id="errorMessage">⚠️ Identifiants incorrects, veuillez réessayer.</div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const user = document.getElementById('userInput').value;
+            const pass = document.getElementById('passInput').value;
+            const error = document.getElementById('errorMessage');
+            const card = document.getElementById('card');
+
+            // --- VALIDATION PERSONNALISÉE ---
+            if (user === "GanaOusmane" && pass === "Ousmane") {
+                // Succès
+                error.style.display = 'none';
+                card.classList.add('success-mode');
+                
+                // Stockage de la session
+                localStorage.setItem("prestiservice_token", "active");
+
+                // Redirection après l'animation
+                setTimeout(() => {
+                    window.location.href = "Gestion.html";
+                }, 600);
+            } else {
+                // Erreur
+                error.style.display = 'block';
+                // Reset du formulaire
+                document.getElementById('loginForm').reset();
+            }
+        });
+    </script>
+</body>
+</html>
