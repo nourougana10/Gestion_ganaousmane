@@ -10,6 +10,7 @@
             --secondary: #8b5cf6;
             --accent: #ec4899;
             --success: #10b981;
+            --warning: #f59e0b;
             --error: #ef4444;
             --dark: #0f172a;
             --light: #f8fafc;
@@ -30,36 +31,14 @@
             background-attachment: fixed;
             min-height: 100vh;
             padding: 20px;
-            overflow-x: hidden;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes slideInLeft {
-            from { opacity: 0; transform: translateX(-20px); }
-            to { opacity: 1; transform: translateX(0); }
-        }
-
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.8; }
-        }
-
-        @keyframes glow {
-            0%, 100% { box-shadow: 0 0 30px rgba(99, 102, 241, 0.3); }
-            50% { box-shadow: 0 0 40px rgba(99, 102, 241, 0.5); }
         }
 
         .main-container {
             max-width: 1200px;
             margin: 0 auto;
-            animation: fadeIn 0.6s ease;
         }
 
-        /* ===== EN-TÊTE PREMIUM ===== */
+        /* ===== EN-TÊTE ===== */
         .header-section {
             display: flex;
             justify-content: space-between;
@@ -72,85 +51,41 @@
             border-radius: 25px;
             flex-wrap: wrap;
             gap: 20px;
-            animation: slideInLeft 0.7s ease;
-            border-top: 2px solid rgba(99, 102, 241, 0.3);
         }
 
         .header-left h1 {
             background: linear-gradient(135deg, #6366f1 0%, #ec4899 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            background-clip: text;
-            font-size: 2.5rem;
+            font-size: 2rem;
             font-weight: 800;
-            letter-spacing: -1px;
-            margin-bottom: 8px;
-        }
-
-        .header-left p {
-            color: #94a3b8;
-            font-size: 0.95rem;
-            font-weight: 500;
-        }
-
-        .header-right {
-            display: flex;
-            gap: 15px;
-            align-items: center;
         }
 
         .stats {
-            background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(236, 72, 153, 0.1));
+            background: rgba(99, 102, 241, 0.2);
             color: #e0e7ff;
             padding: 12px 24px;
             border-radius: 15px;
             font-weight: 700;
-            font-size: 0.95rem;
-            border: 1px solid rgba(99, 102, 241, 0.3);
-            backdrop-filter: blur(10px);
         }
 
         .btn-logout {
-            background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+            background: #ef4444;
             color: white;
             border: none;
             padding: 12px 28px;
             border-radius: 12px;
-            font-weight: 700;
             cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 8px 20px rgba(239, 68, 68, 0.2);
-            font-size: 0.95rem;
+            font-weight: bold;
         }
 
-        .btn-logout:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 12px 30px rgba(239, 68, 68, 0.4);
-        }
-
-        .btn-logout:active {
-            transform: translateY(0);
-        }
-
-        /* ===== FORMULAIRE D'AJOUT PREMIUM ===== */
+        /* ===== FORMULAIRE ===== */
         .form-section {
             background: rgba(15, 23, 42, 0.6);
-            backdrop-filter: blur(20px);
             padding: 40px;
             border-radius: 25px;
             margin-bottom: 40px;
             border: 1px solid rgba(148, 163, 184, 0.2);
-            animation: fadeIn 0.7s ease;
-        }
-
-        .form-section h2 {
-            color: #f1f5f9;
-            font-size: 1.5rem;
-            margin-bottom: 25px;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            gap: 12px;
         }
 
         .form-content {
@@ -160,125 +95,40 @@
             align-items: end;
         }
 
-        .input-group {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .input-group label {
-            color: #cbd5e1;
-            font-weight: 700;
-            font-size: 0.8rem;
-            margin-bottom: 10px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        input[type="text"],
-        input[type="number"] {
+        input {
             padding: 14px 18px;
             border: 2px solid rgba(148, 163, 184, 0.2);
             border-radius: 12px;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-            font-family: 'Inter', sans-serif;
             background: rgba(30, 41, 59, 0.5);
             color: #f1f5f9;
-        }
-
-        input[type="text"]::placeholder,
-        input[type="number"]::placeholder {
-            color: #64748b;
-        }
-
-        input[type="text"]:focus,
-        input[type="number"]:focus {
-            outline: none;
-            border-color: var(--primary);
-            background: rgba(99, 102, 241, 0.1);
-            box-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
+            width: 100%;
         }
 
         .btn-add {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            background: var(--primary);
             color: white;
             border: none;
             padding: 14px 32px;
             border-radius: 12px;
-            font-weight: 700;
+            font-weight: bold;
             cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 8px 20px rgba(99, 102, 241, 0.3);
-            font-size: 0.95rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
         }
 
-        .btn-add:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 30px rgba(99, 102, 241, 0.5);
-        }
-
-        .btn-add:active {
-            transform: translateY(-1px);
-        }
-
-        /* ===== LISTE DES TRAVAILLEURS PREMIUM ===== */
+        /* ===== LISTE ===== */
         .workers-section {
             background: rgba(15, 23, 42, 0.6);
-            backdrop-filter: blur(20px);
             padding: 40px;
             border-radius: 25px;
             border: 1px solid rgba(148, 163, 184, 0.2);
-            animation: fadeIn 0.8s ease;
         }
 
-        .workers-section h2 {
-            color: #f1f5f9;
-            font-size: 1.5rem;
-            margin-bottom: 25px;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        /* ===== BARRE DE RECHERCHE PREMIUM ===== */
         .search-bar {
             display: flex;
-            align-items: center;
             gap: 12px;
             margin-bottom: 25px;
             background: rgba(30, 41, 59, 0.5);
             padding: 14px 18px;
             border-radius: 12px;
-            border: 2px solid rgba(148, 163, 184, 0.2);
-            transition: all 0.3s ease;
-        }
-
-        .search-bar:focus-within {
-            border-color: var(--primary);
-            background: rgba(99, 102, 241, 0.1);
-            box-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
-        }
-
-        .search-bar input {
-            flex: 1;
-            border: none;
-            background: transparent;
-            outline: none;
-            font-size: 1rem;
-            color: #f1f5f9;
-            font-family: 'Inter', sans-serif;
-        }
-
-        .search-bar input::placeholder {
-            color: #64748b;
-        }
-
-        .search-icon {
-            font-size: 1.3rem;
-            color: var(--primary);
         }
 
         .workers-grid {
@@ -286,596 +136,327 @@
             gap: 18px;
         }
 
-        /* ===== WORKER CARD PREMIUM ===== */
+        /* ===== CARTE TRAVAILLEUR ===== */
         .worker-card {
             display: grid;
-            grid-template-columns: 1fr 1fr auto;
+            grid-template-columns: 1.2fr 1fr 2.5fr;
             align-items: center;
-            padding: 22px 26px;
+            padding: 20px;
             border: 1px solid rgba(148, 163, 184, 0.2);
             border-radius: 16px;
-            background: linear-gradient(135deg, rgba(99, 102, 241, 0.08), rgba(139, 92, 246, 0.05));
-            transition: all 0.3s ease;
-            animation: fadeIn 0.5s ease;
+            background: rgba(255, 255, 255, 0.03);
         }
 
-        .worker-card:hover {
-            border-color: var(--primary);
-            background: linear-gradient(135deg, rgba(99, 102, 241, 0.15), rgba(139, 92, 246, 0.1));
-            box-shadow: 0 12px 35px rgba(99, 102, 241, 0.2);
-            transform: translateY(-4px);
-        }
-
-        .worker-name {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-            font-weight: 700;
-            color: #f1f5f9;
-            font-size: 1rem;
-        }
-
-        .worker-name::before {
-            content: '👤';
-            font-size: 1.3rem;
-            filter: drop-shadow(0 0 8px rgba(99, 102, 241, 0.4));
-        }
-
-        .worker-salary {
-            color: var(--gold);
-            font-weight: 700;
-            font-size: 1.1rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .worker-salary::before {
-            content: '💵';
-            font-size: 1.2rem;
-        }
+        .worker-name { font-weight: bold; color: white; }
+        .worker-salary { color: var(--gold); font-weight: bold; }
 
         .worker-actions {
             display: flex;
-            gap: 10px;
+            gap: 6px;
+            justify-content: flex-end;
         }
 
-        .btn-pay {
-            background: linear-gradient(135deg, var(--success), #059669);
-            color: white;
+        .btn-action {
             border: none;
-            padding: 8px 16px;
+            padding: 8px 10px;
             border-radius: 8px;
             cursor: pointer;
-            font-weight: 700;
-            transition: all 0.3s ease;
-            font-size: 0.75rem;
+            font-weight: bold;
+            font-size: 0.7rem;
             text-transform: uppercase;
-            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2);
-        }
-
-        .btn-pay:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 18px rgba(16, 185, 129, 0.4);
-        }
-
-        .btn-delete {
-            background: linear-gradient(135deg, var(--error), #dc2626);
             color: white;
-            border: none;
-            padding: 8px 16px;
-            border-radius: 8px;
-            cursor: pointer;
-            font-weight: 700;
-            transition: all 0.3s ease;
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            box-shadow: 0 4px 12px rgba(239, 68, 68, 0.2);
         }
 
-        .btn-delete:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 18px rgba(239, 68, 68, 0.4);
-        }
+        .btn-pay { background: var(--success); }
+        .btn-withdraw { background: var(--warning); }
+        .btn-history { background: #475569; }
+        .btn-delete { background: var(--error); }
 
-        .empty-state {
-            text-align: center;
-            padding: 50px 20px;
-            color: #94a3b8;
-        }
-
-        .empty-state p {
-            font-size: 1.1rem;
-            margin-bottom: 12px;
-        }
-
-        /* ===== MODAL PREMIUM ===== */
+        /* ===== MODAL ===== */
         .modal {
             display: none;
             position: fixed;
             z-index: 2000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.6);
+            left: 0; top: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.7);
             backdrop-filter: blur(5px);
-            animation: fadeIn 0.3s ease;
         }
 
         .modal-content {
-            background: rgba(15, 23, 42, 0.95);
-            backdrop-filter: blur(20px);
+            background: #0f172a;
             margin: 5% auto;
-            padding: 35px;
+            padding: 30px;
             border-radius: 20px;
             width: 90%;
-            max-width: 600px;
-            max-height: 70vh;
-            overflow-y: auto;
-            border: 1px solid rgba(148, 163, 184, 0.2);
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
-            animation: fadeIn 0.3s ease;
-        }
-
-        .modal-content::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        .modal-content::-webkit-scrollbar-track {
-            background: transparent;
-        }
-
-        .modal-content::-webkit-scrollbar-thumb {
-            background: rgba(99, 102, 241, 0.4);
-            border-radius: 4px;
-        }
-
-        .modal-content::-webkit-scrollbar-thumb:hover {
-            background: rgba(99, 102, 241, 0.6);
-        }
-
-        .modal-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 25px;
-            padding-bottom: 15px;
-            border-bottom: 2px solid rgba(99, 102, 241, 0.2);
-        }
-
-        .modal-header h2 {
-            color: #f1f5f9;
-            font-size: 1.4rem;
-            font-weight: 700;
-        }
-
-        .close-modal {
-            font-size: 1.8rem;
-            cursor: pointer;
-            color: #94a3b8;
-            transition: all 0.3s ease;
-        }
-
-        .close-modal:hover {
-            color: var(--error);
-            transform: rotate(90deg);
-        }
-
-        .payment-history {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
+            max-width: 500px;
+            border: 1px solid var(--primary);
         }
 
         .payment-item {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-            padding: 14px 18px;
-            background: rgba(99, 102, 241, 0.1);
-            border-radius: 12px;
-            border-left: 4px solid var(--primary);
-            transition: all 0.3s ease;
-        }
-
-        .payment-item:hover {
-            background: rgba(99, 102, 241, 0.15);
-        }
-
-        .payment-date {
-            color: #cbd5e1;
-            font-size: 0.9rem;
-            font-weight: 600;
-        }
-
-        .payment-amount {
-            color: var(--gold);
-            font-size: 1.1rem;
-            font-weight: 700;
-            text-align: right;
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            margin-bottom: 5px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
         }
 
         .total-paid {
-            margin-top: 25px;
-            padding: 18px 24px;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            border-radius: 12px;
+            margin-top: 15px;
+            padding: 12px;
+            background: var(--primary);
+            border-radius: 10px;
             color: white;
-            font-weight: 700;
             text-align: center;
-            font-size: 1.1rem;
-            box-shadow: 0 8px 25px rgba(99, 102, 241, 0.3);
+            font-weight: bold;
         }
 
-        /* ===== RESPONSIVE ===== */
         @media (max-width: 768px) {
-            .form-content {
-                grid-template-columns: 1fr;
-            }
+            .worker-card { grid-template-columns: 1fr; gap: 10px; }
+            .worker-actions { justify-content: flex-start; flex-wrap: wrap; }
+            .form-content { grid-template-columns: 1fr; }
+        }
 
-            .worker-card {
-                grid-template-columns: 1fr;
-                gap: 12px;
-            }
-
-            .header-section {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .header-left h1 {
-                font-size: 1.8rem;
-            }
-
-            .header-right {
-                width: 100%;
-                justify-content: center;
-            }
-
-            .form-section,
-            .workers-section {
-                padding: 25px;
+        /* --- STYLE IMPRESSION --- */
+        .btn-print {
+            background: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-left: 10px;
+            padding: 2px 5px;
+        }
+        
+        @media print {
+            body * { visibility: hidden; }
+            #printReceipt, #printReceipt * { visibility: visible; }
+            #printReceipt { 
+                display: block !important;
+                position: absolute; 
+                left: 0; 
+                top: 0; 
+                width: 100%; 
+                color: black !important; 
+                background: white !important; 
             }
         }
-    </style>
-
     </style>
 </head>
 <body>
 
     <div class="main-container">
-        
-        <!-- EN-TÊTE -->
         <div class="header-section">
             <div class="header-left">
                 <h1>🏢 Gana Ousmane Gestion</h1>
-                <p>Gestion des Travailleurs Gana Ousmane</p>
             </div>
-            <div class="header-right">
-                <div class="stats">💼 <span id="countWorkers">1</span> Travailleur(s)</div>
-                <button class="btn-logout" onclick="confirmerDeconnexion()">🚪 Déconnexion</button>
+            <div style="display: flex; gap: 15px; align-items: center;">
+                <div class="stats">💼 <span id="countWorkers">0</span> Employé(s)</div>
+                <button class="btn-logout" onclick="confirmerDeconnexion()">🚪 Quitter</button>
             </div>
         </div>
 
-        <!-- FORMULAIRE D'AJOUT -->
         <div class="form-section">
-            <h2>➕ Ajouter un Travailleur</h2>
+            <h2 style="color: white; margin-bottom: 20px;">➕ Nouveau Travailleur</h2>
             <div class="form-content">
-                <div class="input-group">
-                    <label for="nom">Nom du travailleur</label>
-                    <input type="text" id="nom" placeholder="Ex: Jean Dupont">
-                </div>
-                <div class="input-group">
-                    <label for="salaire">Salaire Mensuel (CFA)</label>
-                    <input type="number" id="salaire" placeholder="Ex: 150000" min="0">
-                </div>
-                <button class="btn-add" onclick="ajouter()">Ajouter</button>
+                <input type="text" id="nom" placeholder="Nom complet">
+                <input type="number" id="salaire" placeholder="Salaire Mensuel (CFA)">
+                <button class="btn-add" onclick="ajouter()">Enregistrer</button>
             </div>
         </div>
 
-        <!-- LISTE DES TRAVAILLEURS -->
         <div class="workers-section">
-            <h2>📋 Liste des Travailleurs</h2>
+            <h2 style="color: white; margin-bottom: 20px;">📋 Liste du Personnel</h2>
             <div class="search-bar">
-                <span class="search-icon">🔍</span>
-                <input type="text" id="searchInput" placeholder="Chercher un travailleur..." onkeyup="rechercherTravailleur()">
+                <input type="text" id="searchInput" placeholder="Rechercher..." onkeyup="rechercherTravailleur()">
             </div>
-            <div class="workers-grid" id="workersContainer">
-                <!-- Les travailleurs s'affichent ici -->
-            </div>
+            <div class="workers-grid" id="workersContainer"></div>
         </div>
-
     </div>
 
-    <!-- MODAL HISTORIQUE VERSEMENTS -->
     <div id="paymentModal" class="modal">
         <div class="modal-content">
-            <div class="modal-header">
-                <h2>💰 Historique des Versements</h2>
-                <span class="close-modal" onclick="fermerModal()">&times;</span>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                <h2 id="modalTitle" style="color: white; font-size: 1.2rem;">💰 Historique</h2>
+                <span style="color: white; cursor: pointer; font-size: 1.5rem;" onclick="fermerModal()">&times;</span>
             </div>
             <div id="modalBody"></div>
         </div>
     </div>
 
+    <div id="printReceipt" style="display:none;"></div>
+
     <script>
-        // ===== INITIALISATION =====
         let workers = [];
-        let dbPromise;
+        let db;
 
-        function openDB() {
-            if (dbPromise) return dbPromise;
-            dbPromise = new Promise((resolve, reject) => {
-                const req = indexedDB.open('PrestiserviceDB', 1);
-                req.onupgradeneeded = e => {
-                    const db = e.target.result;
-                    if (!db.objectStoreNames.contains('workers')) {
-                        db.createObjectStore('workers', { keyPath: 'id' });
-                    }
-                };
-                req.onsuccess = e => resolve(e.target.result);
-                req.onerror = e => reject(e.target.error);
-            });
-            return dbPromise;
+        const request = indexedDB.open('PrestiserviceDB', 1);
+        request.onupgradeneeded = e => e.target.result.createObjectStore('workers', { keyPath: 'id' });
+        request.onsuccess = e => {
+            db = e.target.result;
+            chargerTravailleurs();
+        };
+
+        function chargerTravailleurs() {
+            const tx = db.transaction('workers', 'readonly');
+            tx.objectStore('workers').getAll().onsuccess = e => {
+                workers = e.target.result;
+                rechercherTravailleur();
+            };
         }
 
-        async function getAllWorkersFromDB() {
-            const db = await openDB();
-            return new Promise((res, rej) => {
-                const tx = db.transaction('workers', 'readonly');
-                const store = tx.objectStore('workers');
-                const req = store.getAll();
-                req.onsuccess = () => res(req.result);
-                req.onerror = () => rej(req.error);
-            });
-        }
+        function ajouter() {
+            const nom = document.getElementById('nom').value;
+            const salaire = document.getElementById('salaire').value;
+            if(!nom || !salaire) return;
 
-        async function addWorkerToDB(worker) {
-            const db = await openDB();
-            return new Promise((res, rej) => {
-                const tx = db.transaction('workers', 'readwrite');
-                tx.objectStore('workers').add(worker);
-                tx.oncomplete = () => res();
-                tx.onerror = () => rej(tx.error);
-            });
-        }
-
-        async function deleteWorkerFromDB(id) {
-            const db = await openDB();
-            return new Promise((res, rej) => {
-                const tx = db.transaction('workers', 'readwrite');
-                tx.objectStore('workers').delete(id);
-                tx.oncomplete = () => res();
-                tx.onerror = () => rej(tx.error);
-            });
-        }
-
-        async function init() {
-            const token = localStorage.getItem('prestiservice_token');
-            if (!token || token !== 'active') {
-                window.location.href = 'index.html';
-                return;
-            }
-
-            await openDB();
-            workers = await getAllWorkersFromDB();
-            if (workers.length === 0) {
-                const admin = { id: Date.now(), nom: 'Gana Ousmane', salaire: 'Administrateur', isAdmin: true, versements: [] };
-                await addWorkerToDB(admin);
-                workers = [admin];
-            }
-            afficherTrustees();
-        }
-
-        window.addEventListener('load', init);
-
-        function getWorkersDefaut() {
-            return [
-                { id: Date.now(), nom: 'Gana Ousmane', salaire: 'Administrateur', isAdmin: true, versements: [] }
-            ];
-        }
-
-        // ===== AJOUTER TRAVAILLEUR =====
-        async function ajouter() {
-            const nom = document.getElementById('nom').value.trim();
-            const salaire = document.getElementById('salaire').value.trim();
-
-            if (!nom) {
-                alert('❌ Veuillez entrer le nom du travailleur');
-                return;
-            }
-
-            if (!salaire || isNaN(salaire) || salaire < 0) {
-                alert('❌ Veuillez entrer un salaire valide');
-                return;
-            }
-
-            const newWorker = {
+            const worker = {
                 id: Date.now(),
                 nom: nom,
                 salaire: parseFloat(salaire),
                 isAdmin: false,
                 versements: []
             };
-
-            await addWorkerToDB(newWorker);
-            workers.push(newWorker);
-
+            
+            const tx = db.transaction('workers', 'readwrite');
+            tx.objectStore('workers').add(worker);
+            workers.push(worker);
+            rechercherTravailleur();
             document.getElementById('nom').value = '';
             document.getElementById('salaire').value = '';
-            document.getElementById('nom').focus();
-            
-            afficherTrustees();
-            showNotification('✅ Travailleur ajouté avec succès!');
         }
 
-        // ===== AFFICHER TRAVAILLEURS =====
-        function afficherTrustees() {
-            rechercherTravailleur();
-        }
-
-        // ===== RECHERCHE TRAVAILLEUR =====
         function rechercherTravailleur() {
-            const searchValue = document.getElementById('searchInput').value.toLowerCase().trim();
+            const search = document.getElementById('searchInput').value.toLowerCase();
             const container = document.getElementById('workersContainer');
             container.innerHTML = '';
-
-            const workersFilters = workers.filter(worker => 
-                worker.nom.toLowerCase().includes(searchValue)
-            );
-
-            if (workersFilters.length === 0) {
-                if (searchValue === '') {
-                    container.innerHTML = '<div class="empty-state"><p>📭 Aucun travailleur enregistré</p><p style="font-size: 0.9rem;">Commencez par ajouter un travailleur à la liste</p></div>';
-                } else {
-                    container.innerHTML = '<div class="empty-state"><p>🔍 Aucun résultat pour "' + searchValue + '"</p><p style="font-size: 0.9rem;">Essayez une autre recherche</p></div>';
-                }
-            } else {
-                workersFilters.forEach(worker => {
-                    const card = document.createElement('div');
-                    card.className = 'worker-card';
-                    
-                    let salaryDisplay = worker.isAdmin ? worker.salaire : 
-                        Number(worker.salaire).toLocaleString('fr-FR') + ' CFA';
-
-                    card.innerHTML = `
-                        <div class="worker-name">${worker.nom}</div>
-                        <div class="worker-salary">${salaryDisplay}</div>
-                        <div class="worker-actions">
-                            ${!worker.isAdmin ? `<button class="btn-pay" onclick="verserSalaire(${worker.id})">Verser 75K</button><button class="btn-pay" onclick="afficherHistorique(${worker.id})">Historique</button><button class="btn-delete" onclick="supprimerTravailleur(${worker.id})">Supprimer</button>` : '<span style="color: #999; font-size: 0.85rem;">Protégé</span>'}
-                        </div>
-                    `;
-                    
-                    container.appendChild(card);
-                });
-            }
-
+            const filtered = workers.filter(w => w.nom.toLowerCase().includes(search));
+            
+            filtered.forEach(w => {
+                const card = document.createElement('div');
+                card.className = 'worker-card';
+                card.innerHTML = `
+                    <div class="worker-name">${w.nom}</div>
+                    <div class="worker-salary">${Number(w.salaire).toLocaleString()} CFA</div>
+                    <div class="worker-actions">
+                        ${!w.isAdmin ? `
+                            <button class="btn-action btn-pay" onclick="faireOperation(${w.id}, 'versement')">Verser</button>
+                            <button class="btn-action btn-withdraw" onclick="faireOperation(${w.id}, 'retrait')">Retrait</button>
+                            <button class="btn-action btn-history" onclick="afficherHistorique(${w.id})">Historique</button>
+                            <button class="btn-action btn-delete" onclick="supprimer(${w.id})">Suppr.</button>
+                        ` : '<span style="color:gray">Admin</span>'}
+                    </div>
+                `;
+                container.appendChild(card);
+            });
             document.getElementById('countWorkers').textContent = workers.length;
         }
 
-        // ===== SUPPRIMER TRAVAILLEUR =====
-        async function supprimerTravailleur(id) {
+        async function faireOperation(id, type) {
             const worker = workers.find(w => w.id === id);
             if (!worker) return;
+            let montantParDefaut = type === 'versement' ? "75000" : "";
+            let question = type === 'versement' ? `Entrez le montant à verser pour ${worker.nom} :` : `Entrez la somme que ${worker.nom} souhaite retirer :`;
+            let saisie = prompt(question, montantParDefaut);
+            if (saisie === null || saisie === "") return;
+            let montant = parseFloat(saisie);
+            if (isNaN(montant) || montant <= 0) { alert("Veuillez saisir un nombre valide supérieur à 0."); return; }
+            let montantFinal = type === 'retrait' ? -montant : montant;
 
-            // suppression immédiate sans confirmation
-            await deleteWorkerFromDB(id);
-            workers = workers.filter(w => w.id !== id);
-            afficherTrustees();
-            showNotification('🗑️ Travailleur supprimé');
-        }
-
-        // ===== VERSER SALAIRE 75000F =====
-        async function verserSalaire(id) {
-            const worker = workers.find(w => w.id === id);
-            if (!worker || worker.isAdmin) return;
-
-            if (!worker.versements) {
-                worker.versements = [];
-            }
-
-            const dateAuj = new Date();
-            const dateFormatee = dateAuj.toLocaleDateString('fr-FR', { 
-                year: 'numeric', month: 'long', day: 'numeric'
-            });
-
-            const versement = {
-                date: dateAuj.toISOString(),
-                dateAffichage: dateFormatee,
-                montant: 75000
+            const op = {
+                date: new Date().toLocaleDateString('fr-FR', {day:'numeric', month:'short', year:'numeric'}),
+                montant: montantFinal,
+                label: type.charAt(0).toUpperCase() + type.slice(1)
             };
-
-            worker.versements.push(versement);
-            await updateWorkerInDB(worker);
-            afficherTrustees();
-            showNotification('✅ Versement de 75.000 CFA effectué pour ' + worker.nom);
+            
+            if(!worker.versements) worker.versements = [];
+            worker.versements.push(op);
+            const tx = db.transaction('workers', 'readwrite');
+            tx.objectStore('workers').put(worker).onsuccess = () => {
+                chargerTravailleurs();
+                alert(`${type === 'versement' ? '✅ Versement' : '💸 Retrait'} de ${montant.toLocaleString()} CFA enregistré.`);
+            };
         }
 
-        // ===== AFFICHER HISTORIQUE DES VERSEMENTS =====
         function afficherHistorique(id) {
             const worker = workers.find(w => w.id === id);
-            if (!worker) return;
-
             const modal = document.getElementById('paymentModal');
-            const modalBody = document.getElementById('modalBody');
-            const versements = worker.versements || [];
-
-            let totalVerse = 0;
-            let contenu = '<div class="payment-history">';
-
-            if (versements.length === 0) {
-                contenu += '<p style="text-align: center; color: #999; padding: 20px;">Aucun versement enregistré pour ce travailleur</p>';
+            const body = document.getElementById('modalBody');
+            document.getElementById('modalTitle').textContent = "Détails : " + worker.nom;
+            
+            let html = '<div style="max-height: 350px; overflow-y: auto;">';
+            let total = 0;
+            
+            if(!worker.versements || worker.versements.length === 0) {
+                html += '<p style="color:gray; text-align:center;">Aucune donnée</p>';
             } else {
-                versements.forEach(v => {
-                    totalVerse += v.montant;
-                    contenu += '<div class="payment-item"><div class="payment-date">📅 ' + v.dateAffichage + '</div><div class="payment-amount">' + Number(v.montant).toLocaleString('fr-FR') + ' CFA</div></div>';
+                worker.versements.forEach((v) => {
+                    total += v.montant;
+                    const isNeg = v.montant < 0;
+                    html += `
+                        <div class="payment-item">
+                            <div style="color: #94a3b8">${v.date} (${v.label})</div>
+                            <div style="display: flex; align-items:center;">
+                                <div style="color: ${isNeg ? '#ef4444' : '#f59e0b'}; font-weight: bold;">
+                                    ${isNeg ? '' : '+'}${v.montant.toLocaleString()} CFA
+                                </div>
+                                <button class="btn-print" onclick="imprimerUnRecu('${worker.nom.replace(/'/g, "\\'")}', '${v.label}', '${v.date}', ${v.montant})">🖨️</button>
+                            </div>
+                        </div>`;
                 });
-
-                contenu += '<div class="total-paid">💰 Total versé: ' + Number(totalVerse).toLocaleString('fr-FR') + ' CFA</div>';
             }
-
-            contenu += '</div>';
-
-            modalBody.innerHTML = '<h3 style="color: var(--dark); margin-bottom: 15px;">👤 ' + worker.nom + '</h3>' + contenu;
+            html += `</div><div class="total-paid">Net perçu : ${total.toLocaleString()} CFA</div>`;
+            body.innerHTML = html;
             modal.style.display = 'block';
         }
 
-        function fermerModal() {
-            document.getElementById('paymentModal').style.display = 'none';
-        }
+        function imprimerUnRecu(nom, type, date, montant) {
+            const zone = document.getElementById('printReceipt');
+            const mtAbsolu = Math.abs(parseFloat(montant)).toLocaleString();
+            zone.innerHTML = `
+                <div style="font-family: Arial, sans-serif; border: 3px solid #000; padding: 30px; width: 500px; margin: 20px auto; background: white; color: black;">
+                    <h1 style="text-align: center; margin: 0; font-size: 22px;">GANA OUSMANE GESTION</h1>
+                    <p style="text-align: center; border-bottom: 2px solid #000; padding-bottom: 10px; margin-bottom: 20px;">Reçu de Caisse Officiel</p>
+                    
+                    <div style="line-height: 1.8; font-size: 16px;">
+                        <p><strong>TYPE DE PAIEMENT :</strong> SALAIRE</p>
+                        <p><strong>Nature de l'opération :</strong> ${type.toUpperCase()}</p>
+                        <p><strong>Nom du Travailleur :</strong> ${nom}</p>
+                        <p><strong>Date de l'opération :</strong> ${date}</p>
+                        <p style="font-size: 20px; margin-top: 15px; border: 1px solid #000; padding: 10px; display: inline-block;">
+                            <strong>SOMME :</strong> ${mtAbsolu} CFA
+                        </p>
+                    </div>
 
-        window.onclick = function(event) {
-            const modal = document.getElementById('paymentModal');
-            if (event.target === modal) {
-                modal.style.display = 'none';
-            }
-        }
-
-        // ===== METTRE À JOUR TRAVAILLEUR EN DB =====
-        async function updateWorkerInDB(worker) {
-            const db = await openDB();
-            return new Promise((res, rej) => {
-                const tx = db.transaction('workers', 'readwrite');
-                tx.objectStore('workers').put(worker);
-                tx.oncomplete = () => res();
-                tx.onerror = () => rej(tx.error);
-            });
-        }
-
-        // ===== DÉCONNEXION =====
-        function confirmerDeconnexion() {
-            // déconnexion immédiate sans confirmation
-            localStorage.removeItem('prestiservice_token');
-            window.location.href = 'index.html';
-        }
-
-        // ===== NOTIFICATION =====
-        function showNotification(message) {
-            const notif = document.createElement('div');
-            notif.textContent = message;
-            notif.style.cssText = `
-                position: fixed;
-                top: 20px;
-                right: 20px;
-                background: white;
-                padding: 15px 25px;
-                border-radius: 10px;
-                box-shadow: 0 5px 20px rgba(0,0,0,0.2);
-                font-weight: 600;
-                z-index: 1000;
-                animation: slideIn 0.3s ease;
+                    <div style="display: flex; justify-content: space-between; margin-top: 50px;">
+                        <div style="text-align: center; width: 150px;">
+                            <p style="border-bottom: 1px solid #000; margin-bottom: 40px;">L'Employé</p>
+                        </div>
+                        <div style="text-align: center; width: 150px;">
+                            <p style="border-bottom: 1px solid #000; margin-bottom: 40px;">La Direction</p>
+                        </div>
+                    </div>
+                    <p style="text-align: center; font-size: 10px; margin-top: 30px; color: #666;">Prestiservice Premium - Gestion Gana Ousmane</p>
+                </div>
             `;
-            document.body.appendChild(notif);
-            setTimeout(() => notif.remove(), 3000);
+            window.print();
         }
 
-        // ===== RACCOURCIS CLAVIER =====
-        document.addEventListener('keypress', function(event) {
-            if (event.key === 'Enter' && event.target.id === 'salaire') {
-                ajouter();
+        function supprimer(id) {
+            if(confirm("Supprimer ce travailleur ?")) {
+                const tx = db.transaction('workers', 'readwrite');
+                tx.objectStore('workers').delete(id);
+                workers = workers.filter(w => w.id !== id);
+                rechercherTravailleur();
             }
-        });
+        }
+
+        function fermerModal() { document.getElementById('paymentModal').style.display = 'none'; }
+        
+        function confirmerDeconnexion() {
+            localStorage.removeItem('prestiservice_token');
+            window.location.reload();
+        }
     </script>
 </body>
 </html>
